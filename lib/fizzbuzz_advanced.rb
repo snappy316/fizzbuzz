@@ -12,13 +12,8 @@ class FizzbuzzAdvanced
     to_return = ""
     output = ""
 
-    @values.each do |k, v|
-      output += v if num % k == 0
-    end
+    @values.each { |k, v| output += v if num.modulo(k).zero? }
 
-    output.empty? ? to_return += num.to_s : to_return += output
-    to_return += "\n"
-
-    to_return
+    to_return += (output.empty? ? num.to_s : output) + "\n"
   end
 end
