@@ -12,7 +12,7 @@ class FizzbuzzAdvanced
     to_return = ""
     output = ""
 
-    @values.each { |k, v| output += v if num.modulo(k).zero? }
+    @values.each { |factor, word| output += word if num.modulo(factor).zero? }
 
     to_return += (output.empty? ? num.to_s : output) + "\n"
   end
